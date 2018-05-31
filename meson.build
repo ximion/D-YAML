@@ -1,10 +1,10 @@
 project('D-YAML', 'd',
-    meson_version: '>=0.40.0',
+    meson_version: '>=0.46',
     subproject_dir: 'contrib',
     version: '0.6.5'
 )
 
-project_soversion    = '0'
+project_soversion = '0'
 
 src_dir = include_directories('source/')
 pkgc = import('pkgconfig')

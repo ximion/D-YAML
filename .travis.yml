@@ -1,5 +1,10 @@
-dist: trusty
+dist: xenial
 sudo: false
+
+addons:
+  apt:
+    packages:
+    - meson
 
 language: d
 os:
@@ -16,8 +21,8 @@ before_install:
   - pyenv global system 3.6
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install ninja python3; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip3 install 'meson>=0.44.1'; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip3 install 'meson>=0.44.1'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip3 install 'meson>=0.46'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip3 install 'meson>=0.46'; fi
 
 install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mkdir .ntmp && curl -L https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip -o .ntmp/ninja-linux.zip; fi
